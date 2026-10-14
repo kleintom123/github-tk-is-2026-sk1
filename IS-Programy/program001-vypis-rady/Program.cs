@@ -1,1 +1,13 @@
-﻿Console.WriteLine("Hello, World!");
+﻿string again = "a";
+
+// Řídící cyklus programu
+// ToLower() převede vstup na malá písmena, takže program pokračuje při zadání "a" i "A"
+// Jakýkoli jiný vstup program ukončí
+while(again.ToLower() == "a")
+{
+    
+    // Dotaz směrem k uživateli na opakování
+    Console.WriteLine();
+    Console.Write("Pro opakování programu stiskněte klávesu a. Následně potvrďte klaváseou Enter");
+    again = Console.ReadLine() ?? "";
+}
