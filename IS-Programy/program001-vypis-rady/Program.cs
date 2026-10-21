@@ -15,6 +15,10 @@ while(again.ToLower() == "a")
     Console.WriteLine("********* První program yay *********");
     Console.WriteLine("*************************************");
 
+    // Vstup počáteční hodnoty - špatné řešení
+    //Console.Write("Zadejte první číslo řady: ");
+    //int first = int.Parse(Console.ReadLine());
+
     // Vstup počáteční hodnoty
     Console.Write("Zadejte první číslo řady (celé číslo): ");
     int first;
@@ -54,6 +58,9 @@ while(again.ToLower() == "a")
         while (current <= last)
         {
             Console.WriteLine(current);
+            // Console.Write($"{current}; ");
+            //current = current + step;
+            //stručnější zápis předchozího řádku
             current += step;
         }
     }
@@ -65,5 +72,8 @@ while(again.ToLower() == "a")
     // Dotaz směrem k uživateli na opakování
     Console.WriteLine();
     Console.Write("Pro opakování programu stiskněte klávesu a. Následně potvrďte klaváseou Enter ");
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.Write("Chcete program pustit znovu?  ");
     again = Console.ReadLine() ?? "";
 }
