@@ -10,7 +10,7 @@ while(again.ToLower() == "a")
 
     //Hlavička programu
     Console.WriteLine("*************************************");
-    Console.WriteLine("*********** Součet cifer ************");
+    Console.WriteLine("******** Součet a součin cifer ******");
     Console.WriteLine("*************************************");
     Console.WriteLine("********** 2. program yay ***********");
     Console.WriteLine("*************************************");
@@ -39,6 +39,7 @@ while(again.ToLower() == "a")
     // Příprava pomocných proměnných pro výpočet
     int numberBackup = number;
     int sum = 0;    // Neutrální hodnota pro sčítání je 0
+    int product = 1;  // Neutrální hodnota pro součin je 1
     int digit;      // Proměnná pro uložení právě zjištěné číslice
 
 
@@ -51,6 +52,7 @@ while(again.ToLower() == "a")
     if(number == 0)
     {
         sum = 0;
+        product = 0;
     }
     else
     {
@@ -63,6 +65,7 @@ while(again.ToLower() == "a")
         {
             digit = number % 10; // Modulo 10 - získáme poslední číslici
             sum = sum + digit; // Přičtení číslice k celkovému součtu
+            product = product * digit; // Násobení číslic
 
             Console.WriteLine($"Získaná číslice: {digit}");
 
@@ -74,6 +77,7 @@ while(again.ToLower() == "a")
     Console.WriteLine();
     Console.WriteLine("================================================");
     Console.WriteLine($"Součet číslic čísla {numberBackup} je {sum}.");
+    Console.WriteLine($"Součin číslic čísla {numberBackup} je {product}.");
     Console.WriteLine("================================================");
     Console.WriteLine();
 
@@ -85,5 +89,5 @@ while(again.ToLower() == "a")
     Console.WriteLine();
     Console.Write("Chcete program pustit znovu?  ");
     again = Console.ReadLine() ?? "";
-    
+
 }
