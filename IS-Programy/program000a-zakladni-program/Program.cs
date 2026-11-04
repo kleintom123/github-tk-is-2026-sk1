@@ -47,6 +47,7 @@ while(again.ToLower() == "a")
     // Dotaz směrem k uživateli na opakování
     Console.WriteLine();
     Console.Write("Pro opakování programu stiskněte klávesu a. Následně potvrďte klaváseou Enter ");
+    Console.WriteLine("Jakoukoliv jinou klávesou program ukončíte");
     Console.WriteLine();
     Console.WriteLine();
     Console.Write("Chcete program pustit znovu?  ");
