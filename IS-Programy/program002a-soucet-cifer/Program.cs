@@ -85,4 +85,5 @@ while(again.ToLower() == "a")
     Console.WriteLine();
     Console.Write("Chcete program pustit znovu?  ");
     again = Console.ReadLine() ?? "";
+    
 }
