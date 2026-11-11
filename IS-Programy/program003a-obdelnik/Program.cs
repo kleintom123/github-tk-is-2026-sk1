@@ -22,7 +22,9 @@ while(again.ToLower() == "a")
     int width;
     while(!int.TryParse(Console.ReadLine(), out width) || width <= 0)
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("Šířka musí být celé kladné číslo větší než 0. Zadejte číslo znovu: ");
+        Console.ResetColor();
     }
 
     // Bezpečné načtení výšky s kontrolou na kladnou hodnotu
@@ -30,7 +32,9 @@ while(again.ToLower() == "a")
     int height;
     while(!int.TryParse(Console.ReadLine(), out height) || height <= 0)
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("Výška musí být celé kladné číslo větší než 0. Zadejte číslo znovu: ");
+        Console.ResetColor();
     }
 
 
@@ -40,6 +44,9 @@ while(again.ToLower() == "a")
     Console.WriteLine($"Vykresluji obrazec o rozměrech {width} × {height}:");
     Console.WriteLine("================================================");
     Console.WriteLine();
+
+    // Obarvení obrazce
+    Console.ForegroundColor = ConsoleColor.Cyan;
 
     // Jádro algoritmu: Vnořený cyklus pro 2D rastr
     // Vnější cyklus počítá řádky (shora dolů)
@@ -56,6 +63,7 @@ while(again.ToLower() == "a")
         Console.WriteLine();
     }
     
+    Console.ResetColor();
 
     // Dotaz směrem k uživateli na opakování
     Console.WriteLine();
