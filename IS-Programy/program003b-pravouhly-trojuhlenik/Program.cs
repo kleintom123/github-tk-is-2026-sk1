@@ -1,0 +1,68 @@
+﻿string again = "a";
+
+// Řídící cyklus programu
+// ToLower() převede vstup na malá písmena, takže program pokračuje při zadání "a" i "A"
+// Jakýkoli jiný vstup program ukončí
+while(again.ToLower() == "a")
+{
+    // Vymazání konzole
+    Console.Clear();
+
+    //Hlavička programu
+    Console.WriteLine("*************************************");
+    Console.WriteLine("***** Vykreslování trojuhelníku *****");
+    Console.WriteLine("*************************************");
+    Console.WriteLine("********** 3b. program yay ***********");
+    Console.WriteLine("*************************************");
+
+
+    // Bezpečné načtení výšky s kontrolou na kladnou hodnotu
+    Console.Write("Zadejte výšku pravoúhlého trojúhelníku (celé kladné číslo): ");
+    int height;
+    while(!int.TryParse(Console.ReadLine(), out height) || height <= 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write("Výška musí být celé kladné číslo větší než 0. Zadejte číslo znovu: ");
+        Console.ResetColor();
+    }
+
+
+    // Rekapitulace zadaných hodnot
+    Console.WriteLine();
+    Console.WriteLine("==========================================");
+    Console.WriteLine($"Vykresluji pravoúhlý trojúhelník {height}:");
+    Console.WriteLine("==========================================");
+    Console.WriteLine();
+
+    // Obarvení obrazce
+    Console.ForegroundColor = ConsoleColor.Cyan;
+
+    // Jádro algoritmu: Vnořený cyklus pro 2D rastr
+    // Vnější cyklus počítá řádky (shora dolů)
+    for(int i = 1; i <= height; i++)
+    {
+        
+        //Vnitřní cyklus sází sloupce v aktuálním řádku (zleva doprava)
+        for(int j = 1; j <= i; j++)
+        {
+            Console.Write("* ");
+
+            // Efekt animace vykreslování
+            System.Threading.Thread.Sleep(System.TimeSpan.FromMilliseconds(100));
+        }
+
+        // Konec řádku -> přesun kurzoru na nový řádek
+        Console.WriteLine();
+    }
+    
+    Console.ResetColor();
+
+    // Dotaz směrem k uživateli na opakování
+    Console.WriteLine();
+    Console.Write("Pro opakování programu stiskněte klávesu a. Následně potvrďte klaváseou Enter ");
+    Console.WriteLine("Jakoukoliv jinou klávesou program ukončíte");
+    Console.WriteLine();
+    Console.WriteLine();
+    Console.Write("Chcete program pustit znovu?  ");
+    again = Console.ReadLine() ?? "";
+}
