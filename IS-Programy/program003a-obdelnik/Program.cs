@@ -46,17 +46,29 @@ while(again.ToLower() == "a")
     Console.WriteLine();
 
     // Obarvení obrazce
-    Console.ForegroundColor = ConsoleColor.Cyan;
+    //Console.ForegroundColor = ConsoleColor.Cyan;
 
     // Jádro algoritmu: Vnořený cyklus pro 2D rastr
     // Vnější cyklus počítá řádky (shora dolů)
     for(int i = 1; i <= height; i++)
     {
+        // Střídání barev řádků
+        if(i % 2 == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        }
+        
         //Vnitřní cyklus sází sloupce v aktuálním řádku (zleva doprava)
         for(int j = 1; j <= width; j++)
         {
             Console.Write("* ");
-            System.Threading.Thread.Sleep(System.TimeSpan.FromMilliseconds(100)); // Efekt animace vykreslování
+
+            // Efekt animace vykreslování
+            System.Threading.Thread.Sleep(System.TimeSpan.FromMilliseconds(100));
         }
 
         // Konec řádku -> přesun kurzoru na nový řádek
