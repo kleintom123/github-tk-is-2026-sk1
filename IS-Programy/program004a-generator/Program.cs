@@ -52,6 +52,11 @@ while(again.ToLower() == "a")
 
     // Deklarace a alokace pole v paměti
     int[] myRandNumbs = new int[n];
+    int positiveNumbs = 0;
+    int negativeNumbs = 0;
+    int zeros = 0;
+    int even = 0;
+    int odd = 0;
 
     // Inicializace generátoru náhodných čísel
     Random myRandNumb = new Random();
@@ -63,8 +68,45 @@ while(again.ToLower() == "a")
     {
         myRandNumbs[i] = myRandNumb.Next(lowerBound, upperBound + 1);
         Console.Write($"{myRandNumbs[i]}; ");
+        
+        /*if(myRandNumbs[i] > 0)
+            positiveNumbs++;
+        if (myRandNumbs[i] < 0)
+            negativeNumbs++;
+        if (myRandNumbs[i] == 0)
+           zeros++;  
+        */
+
+        // efektivnější předchozí
+        if(myRandNumbs[i] < 0)
+            negativeNumbs++;
+        else if (myRandNumbs[i] > 0)
+            positiveNumbs++;
+        else
+            zeros++;
+        
+
+        //počítání sudých nebo lichých čísel
+        if(myRandNumbs[i] % 2 == 0 )
+            even++;
+        else
+            odd++;  
+                
+            
     }
 
+    Console.WriteLine();
+    Console.WriteLine("====================================");
+    Console.WriteLine($"Počet kladných čísel: {positiveNumbs}");
+    Console.WriteLine($"Počet záporných čísel: {negativeNumbs}");
+    Console.WriteLine($"Počet nul: {zeros}");
+    Console.WriteLine("====================================");
+
+    Console.WriteLine();
+    Console.WriteLine("====================================");
+    Console.WriteLine($"Počet sudých čísel: {even}");
+    Console.WriteLine($"Počet záporných čísel: {odd}");
+    Console.WriteLine("====================================");
 
 
 
