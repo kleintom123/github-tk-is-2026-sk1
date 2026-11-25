@@ -65,6 +65,36 @@ while(again.ToLower() == "a")
         Console.Write($"{myRandNumbs[i]}; ");
     }
 
+    // Hledání maxima, minimaa a jejich prvních pozic
+    int max = myRandNumbs[0];
+    int min = myRandNumbs[0];
+    int posMax = 0; // pozice prvního maxima
+    int posMin = 0; // potice prního minima
+
+    for( int i = 1; i < n; i++) // i můžeme porovnat s indexem 1 jelikož bychom porovnávali číslo samo se sebou
+    {
+        // zjisšťujeme zda i-tý prvek není větší než aktuální hodnota maxima
+        if(myRandNumbs[i] > max)
+        {
+            max = myRandNumbs[i];
+            posMax = i;
+        }
+
+        // zjisšťujeme zda i-tý prvek není menší než aktuální hodnota minima
+        if(myRandNumbs[i] < min)
+        {
+            min = myRandNumbs[i];
+            posMin = i;
+        }
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("====================================");
+    Console.WriteLine($"Maximum: {max}");
+    Console.WriteLine($"Pozice prvního maxima: {posMax}");
+    Console.WriteLine($"Minimum: {min}");
+    Console.WriteLine($"Pozice prvního minima: {posMin}");
+    Console.WriteLine("====================================");
 
 
 
