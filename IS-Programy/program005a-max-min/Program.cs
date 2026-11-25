@@ -71,7 +71,7 @@ while(again.ToLower() == "a")
     int posMax = 0; // pozice prvního maxima
     int posMin = 0; // potice prního minima
 
-    for( int i = 1; i < n; i++) // i můžeme porovnat s indexem 1 jelikož bychom porovnávali číslo samo se sebou
+    for( int i = 1; i < n; i++) // i můžeme dát rovný s indexem 1 jelikož bychom porovnávali číslo samo se sebou
     {
         // zjisšťujeme zda i-tý prvek není větší než aktuální hodnota maxima
         if(myRandNumbs[i] > max)
@@ -95,6 +95,52 @@ while(again.ToLower() == "a")
     Console.WriteLine($"Minimum: {min}");
     Console.WriteLine($"Pozice prvního minima: {posMin}");
     Console.WriteLine("====================================");
+
+
+    // Vykreslení přesýpacích hodin
+    if (max >= 3)
+    {
+        // Vnější cyklus řídí vykreslování jednotlivých řádků
+        for(int i = 0; i < max; i++)
+        {
+            int spaces = 0; // proměnná pro počet úvodních mezer v aktuálním řádku
+            int stars = 0; // proměnná pro počet hvězdiček v aktuálním řádku
+
+            if(i < max / 2)
+            {
+                // Horní polovina obrazce
+                // počet mezer je přímo úměrný proměnné i 
+                spaces = i;
+                // Hvězdičky ubývají o dvě na každém řádku
+                stars = max - (2 * i);
+            }
+            else
+            {
+                // Dolní polovina obrazce
+                // TO-DO: samostatně
+            }
+
+            // Samostatné vykreslení aktuálního řádku
+            // Nejprve vykreslujeme mezery
+            for(int sp = 0; sp < spaces; sp++)
+            {
+                Console.Write(" ");
+            }
+
+            // Následně vykreslujeme hvězdičky
+            for (int st = 0; st < stars; st++)
+            {
+                Console.Write("*");
+            }
+            
+            // Přechod na další řádek, ale až potom co vykreslíme potřebné znaky
+            Console.WriteLine();
+        }
+    }
+    else
+    {
+        Console.WriteLine("Maximum je menší než 3 => obrazec se nevykreslí!");
+    }
 
 
 
